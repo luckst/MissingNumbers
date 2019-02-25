@@ -27,6 +27,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1. Presentation", "1. Prese
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PuntosColombia.MissingNumbers.API", "PuntosColombia.MissingNumbers\PuntosColombia.MissingNumbers.API\PuntosColombia.MissingNumbers.API.csproj", "{0FA97BF6-FED4-4488-8AA8-B2C03EC25FAC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PuntosColombia.MissingNumbers", "PuntosColombia.MissingNumbers\PuntosColombia.MissingNumbers\PuntosColombia.MissingNumbers.csproj", "{CA75B958-A338-4ABA-A9C6-F2D9D3EA662B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -61,6 +63,10 @@ Global
 		{0FA97BF6-FED4-4488-8AA8-B2C03EC25FAC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0FA97BF6-FED4-4488-8AA8-B2C03EC25FAC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0FA97BF6-FED4-4488-8AA8-B2C03EC25FAC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CA75B958-A338-4ABA-A9C6-F2D9D3EA662B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CA75B958-A338-4ABA-A9C6-F2D9D3EA662B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CA75B958-A338-4ABA-A9C6-F2D9D3EA662B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CA75B958-A338-4ABA-A9C6-F2D9D3EA662B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -74,6 +80,7 @@ Global
 		{FA7541D8-148B-4CCD-A0FD-73597D6702EF} = {79023126-D157-4D65-8DAB-C23B9E55D674}
 		{07AC98E8-24DF-45AE-BFD7-2507F668BF25} = {38B2D08F-3243-4C32-8324-3C0C06220C30}
 		{0FA97BF6-FED4-4488-8AA8-B2C03EC25FAC} = {3662D0A2-D345-4A37-928C-0B829006A9A4}
+		{CA75B958-A338-4ABA-A9C6-F2D9D3EA662B} = {3662D0A2-D345-4A37-928C-0B829006A9A4}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {656ED259-9296-47BE-B655-9F55094D5C77}
