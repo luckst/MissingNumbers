@@ -13,6 +13,7 @@ import { LoginComponent } from './login/login.component';
 import { AuthenticationService } from './services/authentication.service';
 import { RegisterComponent } from './register/register.component';
 import { MissingNumbersComponent } from './missing-numbers/missing-numbers.component';
+import { SearchService } from './services/search.service';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,7 @@ import { MissingNumbersComponent } from './missing-numbers/missing-numbers.compo
     FetchDataComponent,
     LoginComponent,
     RegisterComponent,
-    MissingNumbersComponent
+    MissingNumbersComponent    
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -39,7 +40,7 @@ import { MissingNumbersComponent } from './missing-numbers/missing-numbers.compo
       { path: 'fetch-data', component: FetchDataComponent },
     ])
   ],
-  providers: [AuthenticationService, NavMenuComponent],
+  providers: [AuthenticationService, NavMenuComponent, SearchService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

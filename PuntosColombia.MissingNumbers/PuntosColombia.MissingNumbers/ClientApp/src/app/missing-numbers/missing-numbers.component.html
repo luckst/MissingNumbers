@@ -1,1 +1,118 @@
-﻿<div style="border: 1px solid red">missing-numbers Component</div>
+<h2>Busquedas</h2>
+<div class="panel panel-default">
+  <div class="panel-body">
+    <form class="form-horizontal" [formGroup]="searchForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="quantityListOne">Cantidad lista uno:</label>
+        <input type="number" class="form-control" formControlName="quantityListOne" [ngClass]="{ 'is-invalid': submitted && f.quantityListOne.errors }" />
+        <div *ngIf="submitted && f.quantityListOne.errors" class="invalid-feedback">
+          <div *ngIf="f.quantityListOne.errors.required">Cantidad lista uno requerida</div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="listOne">Lista uno:</label>
+        <input type="text" (keypress)="numberOnly($event)" class="form-control" formControlName="listOne" [ngClass]="{ 'is-invalid': submitted && f.listOne.errors }" />
+        <div *ngIf="submitted && f.listOne.errors" class="invalid-feedback">
+          <div *ngIf="f.listOne.errors.required">Lista uno requerida</div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="quantityListTwo">Cantidad lista dos:</label>
+        <input type="number" class="form-control" formControlName="quantityListTwo" [ngClass]="{ 'is-invalid': submitted && f.quantityListTwo.errors }" />
+        <div *ngIf="submitted && f.quantityListTwo.errors" class="invalid-feedback">
+          <div *ngIf="f.quantityListTwo.errors.required">Cantidad lista uno requerida</div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="listTwo">Lista dos:</label>
+        <input type="text" (keypress)="numberOnly($event)" class="form-control" formControlName="listTwo" [ngClass]="{ 'is-invalid': submitted && f.listTwo.errors }" />
+        <div *ngIf="submitted && f.listTwo.errors" class="invalid-feedback">
+          <div *ngIf="f.listTwo.errors.required">Lista dos requerida</div>
+        </div>
+      </div>
+      <div class="form-group" *ngIf="result">
+        <label>Resultado:</label>
+        <div>
+          {{result}}
+        </div>
+      </div>
+      <div class="form-group">
+        <button [disabled]="loading" class="btn btn-primary">Realizar Busqueda</button>
+        <img *ngIf="loading" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
+      </div>
+    </form>
+  </div>
+</div>
+<div class="panel panel-default">
+  <div class="panel-heading">
+    Filtros
+  </div>
+  <div class="panel-body">
+    <div class="row">
+      <form class="form-inline" [formGroup]="filterForm" (ngSubmit)="onSubmitFilter()">
+        <div class="form-group">
+          <label for="startDate">Fecha inicial:</label>
+          <input type="date" formControlName="startDate" class="form-control" />
+        </div>
+        <div class="form-group">
+          <label for="endDate">Fecha final:</label>
+          <input type="date" formControlName="endDate" class="form-control" />
+        </div>
+        <div class="form-group">
+          <button [disabled]="loading" class="btn btn-primary">Filtrar</button>
+          <img *ngIf="loading" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
+        </div>
+      </form>
+    </div>
+    <div class="row">
+      <div class="table-responsive">
+        <table class="table table-condensed">
+          <thead>
+            <tr>
+              <th>Acciones</th>
+              <th>Fecha</th>
+              <th>Resultado</th>
+            </tr>
+          </thead>
+          <tr *ngFor="let search of searches">
+            <td>
+              <a (click)="delete(search.searchId)" style="cursor:pointer;">Eliminar</a>
+              <a (click)="details(search)" style="cursor:pointer;">Detalle</a>
+
+            </td>
+            <td>{{search.date}}</td>
+            <td>{{search.result}}</td>
+
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="panel panel-info" *ngIf="searchDetail">
+  <div class="panel-heading">
+    Detalle busqueda
+    <a class="pull-right" (click)="hideDetails()" style="cursor:pointer;"> Ocultar detalle</a>
+  </div>
+  <div class="panel-body">
+    <div class="form-horizontal">
+      <div class="form-group">
+        <label for="quantityListOne">Cantidad lista uno:</label>
+        <input type="text" class="form-control" [(ngModel)]="searchDetail.quantityListOne" readonly />
+      </div>
+      <div class="form-group">
+        <label for="listOne">Lista uno:</label>
+        <input type="text" class="form-control" [(ngModel)]="searchDetail.listOne" readonly />
+      </div>
+      <div class="form-group">
+        <label for="quantityListTwo">Cantidad lista dos:</label>
+        <input type="text" class="form-control" [(ngModel)]="searchDetail.quantityListTwo" readonly />
+      </div>
+      <div class="form-group">
+        <label for="listTwo">Lista dos:</label>
+        <input type="text" class="form-control" [(ngModel)]="searchDetail.listTwo" readonly />
+      </div>
+    </div>
+  </div>
+</div>

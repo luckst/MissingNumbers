@@ -46,8 +46,12 @@
         {
             modelBuilder.Entity<User>()
                 .ToTable("Users");
+            modelBuilder.Entity<Search>()
+                .ToTable("Searches");
         }
 
         public DbSet<User> Users { get; set; }
+        public DbSet<Search> Searches { get; set; }
+
     }
 }

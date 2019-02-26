@@ -81,6 +81,7 @@ namespace PuntosColombia.MissingNumbers.DependencyInjection
 
             // Application
             services.AddScoped<ISecurityService, SecurityService>();
+            services.AddScoped<ISearchService, SearchService>();
 
             //Domain
 

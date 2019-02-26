@@ -1,0 +1,26 @@
+<div class="modal-header">
+  <h4 class="modal-title" id="modal-basic-title">Detalle</h4>
+  <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="modal-body">
+  <div class="form-horizontal">
+    <div class="form-group">
+      <label for="quantityListOne">Cantidad lista uno:</label>
+      <input type="number" class="form-control"} [(ngModel)]="search.quantityListOne"readonly />
+    </div>
+    <div class="form-group">
+      <label for="listOne">Lista uno:</label>
+      <input type="number" class="form-control" } [(ngModel)]="search.listOne" readonly />
+    </div>
+    <div class="form-group">
+      <label for="quantityListTwo">Cantidad lista dos:</label>
+      <input type="number" class="form-control" } [(ngModel)]="search.quantityListTwo" readonly />
+    </div>
+    <div class="form-group">
+      <label for="listTwo">Lista dos:</label>
+      <input type="number" class="form-control" } [(ngModel)]="search.listTwo" readonly />
+    </div>
+  </div>
+</div>
