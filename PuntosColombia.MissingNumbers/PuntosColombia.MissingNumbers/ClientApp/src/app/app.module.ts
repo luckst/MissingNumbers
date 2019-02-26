@@ -14,6 +14,7 @@ import { AuthenticationService } from './services/authentication.service';
 import { RegisterComponent } from './register/register.component';
 import { MissingNumbersComponent } from './missing-numbers/missing-numbers.component';
 import { SearchService } from './services/search.service';
+import { DataTableModule } from "angular-6-datatable";
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { SearchService } from './services/search.service';
     ReactiveFormsModule,
     HttpClientModule,
     FormsModule,
+    DataTableModule,
     RouterModule.forRoot([
       { path: '', component: HomeComponent, pathMatch: 'full' },
       { path: 'login', component: LoginComponent },
