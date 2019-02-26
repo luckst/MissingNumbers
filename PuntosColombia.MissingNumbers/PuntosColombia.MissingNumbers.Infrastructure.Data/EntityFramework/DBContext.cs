@@ -2,6 +2,7 @@
 {
     using Microsoft.EntityFrameworkCore;
     using Microsoft.Extensions.Configuration;
+    using PuntosColombia.MissingNumbers.Domain.Entities;
     using System;
     using System.IO;
 
@@ -40,5 +41,13 @@
             }
 
         }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<User>()
+                .ToTable("Users");
+        }
+
+        public DbSet<User> Users { get; set; }
     }
 }

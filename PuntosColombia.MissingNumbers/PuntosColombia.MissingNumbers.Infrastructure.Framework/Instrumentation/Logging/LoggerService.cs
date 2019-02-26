@@ -11,7 +11,7 @@
         public LoggerService(ILogger log)
         {
             this.log = log.ForContext("Priority", 1)
-                .ForContext("Title", "Integration Services Ordenes")
+                .ForContext("Title", "Puntos Colombia")
                 .ForContext("MachineName", CurrentMachineName)
                 .ForContext("AppDomainName", Environment.UserDomainName)
                 .ForContext("ProcessID", Process.GetCurrentProcess().Id)

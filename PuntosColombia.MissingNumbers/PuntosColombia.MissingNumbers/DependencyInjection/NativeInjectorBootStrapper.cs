@@ -1,19 +1,24 @@
-﻿namespace PuntosColombia.MissingNumbers.API.DependencyInjection
+﻿
+
+namespace PuntosColombia.MissingNumbers.DependencyInjection
 {
-    using AutoMapper;
+    using Microsoft.EntityFrameworkCore;
+    using Microsoft.Extensions.Configuration;
+    using Microsoft.Extensions.DependencyInjection;
     using PuntosColombia.MissingNumbers.Infrastructure.Data.DBFactory;
     using PuntosColombia.MissingNumbers.Infrastructure.Data.EntityFramework;
     using PuntosColombia.MissingNumbers.Infrastructure.Data.Repositories;
     using PuntosColombia.MissingNumbers.Infrastructure.Framework.Instrumentation.Logging;
     using PuntosColombia.MissingNumbers.Infrastructure.Framework.RepositoryPattern;
-    using Microsoft.EntityFrameworkCore;
-    using Microsoft.Extensions.Configuration;
-    using Microsoft.Extensions.DependencyInjection;
+    using AutoMapper;
+    using System;
+    using System.Collections.Generic;
     using Serilog;
     using Serilog.Events;
     using Serilog.Sinks.MSSqlServer;
-    using System.Collections.ObjectModel;
     using System.Data;
+    using System.Collections.ObjectModel;
+    using PuntosColombia.MissingNumbers.Application.Services;
 
     public class NativeInjectorBootStrapper
     {
@@ -23,17 +28,16 @@
         /// <param name="services"></param>
         public void RegisterServices(IServiceCollection services, IConfigurationRoot configuration)
         {
-            // Build configuration
-            /*var configuration = new ConfigurationBuilder()
-                .SetBasePath(AppContext.BaseDirectory)
-                .AddJsonFile("appsettings.json", false)
-                .Build();*/
-
             services.AddSingleton(configuration);
 
             //Automapper
-            services.AddSingleton(Mapper.Configuration);
-            services.AddScoped<IMapper>(sp => new Mapper(sp.GetRequiredService<AutoMapper.IConfigurationProvider>(), sp.GetService));
+            // Auto Mapper Configurations
+            var mappingConfig = new MapperConfiguration(mc =>
+            {
+                mc.AddProfile(new MappingProfile());
+            });
+            IMapper mapper = mappingConfig.CreateMapper();
+            services.AddSingleton(mapper);
 
             // Add logging
             #region log
@@ -53,14 +57,6 @@
             columnOptions.Store.Remove(StandardColumn.MessageTemplate);
             columnOptions.Store.Remove(StandardColumn.Properties);
 
-            /*columnOptions.Store.Remove(StandardColumn.Message);
-            columnOptions.Store.Remove(StandardColumn.Level);
-            columnOptions.Store.Remove(StandardColumn.TimeStamp);
-            columnOptions.Store.Remove(StandardColumn.Exception);
-            columnOptions.Store.Remove(StandardColumn.LogEvent);*/
-
-            /*columnOptions.MessageTemplate.ColumnName = "";
-            columnOptions.Properties.ColumnName = "";*/
             columnOptions.Message.ColumnName = "Message";
             columnOptions.Level.ColumnName = "Severity";
             columnOptions.TimeStamp.ColumnName = "Timestamp";
@@ -77,24 +73,18 @@
                  , configuration["Serilog:TableName"]
                  , LogEventLevel.Verbose
                  , columnOptions: columnOptions
-                 //, schemaName: configuration["Serilog:Schema"]
                  )
                  .CreateLogger());
 
-            //var file = File.CreateText("C:/Docs/Serilog.txt");
-            //Serilog.Debugging.SelfLog.Enable(TextWriter.Synchronized(file));
             #endregion
 
 
             // Application
-            //services.AddScoped<ISecurityService, SecurityService>();
+            services.AddScoped<ISecurityService, SecurityService>();
 
             //Domain
-            //services.AddScoped<IChannelService, ChannelService>();
 
             //Repositories
-            //services.AddScoped<IProductChannelRepository, ProductChannelRepository>();
-            //services.AddScoped<IScheduledTaskHistoryRepository, ScheduledTaskHistoryRepository>();
 
             // Infrastructure
 
@@ -106,7 +96,6 @@
             services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
 
             services.AddScoped<DbContext>(sp => sp.GetService<DBContext>());
-            //services.AddScoped<DBCatalogContext>();
 
             services.AddDbContext<DBContext>(options =>
             {
@@ -117,10 +106,6 @@
                 // to replace the default OpenIddict entities.
                 //options.UseOpenIddict();
             });
-
-            //Auth0
-            //services.AddSingleton<IAuthorizationHandler, HasChannelAuthorizationHandler>();
-
         }
     }
 }

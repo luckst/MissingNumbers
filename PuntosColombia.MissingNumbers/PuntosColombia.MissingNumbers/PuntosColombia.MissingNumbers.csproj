@@ -13,15 +13,28 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="6.0.0" />
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.1.2" PrivateAssets="All" />
     <PackageReference Include="Microsoft.AspNetCore.SpaServices.Extensions" Version="2.1.1" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.1.1" />
   </ItemGroup>
 
   <ItemGroup>
     <!-- Don't publish the SPA source files, but do show them in the project files list -->
+    <Compile Remove="ClientApp\src\services\**" />
     <Content Remove="$(SpaRoot)**" />
+    <Content Remove="ClientApp\src\services\**" />
     <None Include="$(SpaRoot)**" Exclude="$(SpaRoot)node_modules\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Remove="ClientApp\src\services\**" />
+    <None Remove="ClientApp\src\services\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="ClientApp\src\app\models\user.ts" />
   </ItemGroup>
 
   <ItemGroup>
@@ -30,6 +43,10 @@
     <ProjectReference Include="..\PuntosColombia.MissingNumbers.Domain\PuntosColombia.MissingNumbers.Domain.csproj" />
     <ProjectReference Include="..\PuntosColombia.MissingNumbers.Infrastructure.Data\PuntosColombia.MissingNumbers.Infrastructure.Data.csproj" />
     <ProjectReference Include="..\PuntosColombia.MissingNumbers.Infrastructure.Framework\PuntosColombia.MissingNumbers.Infrastructure.Framework.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <TypeScriptCompile Include="ClientApp\src\app\models\user.ts" />
   </ItemGroup>
 
   <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">

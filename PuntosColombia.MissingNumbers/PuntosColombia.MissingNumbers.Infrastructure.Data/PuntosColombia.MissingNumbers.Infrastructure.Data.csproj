@@ -15,6 +15,7 @@
     <DotNetCliToolReference Include="Microsoft.EntityFrameworkCore.Tools.DotNet" Version="2.0.3" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\PuntosColombia.MissingNumbers.Domain.Entities\PuntosColombia.MissingNumbers.Domain.Entities.csproj" />
     <ProjectReference Include="..\PuntosColombia.MissingNumbers.Infrastructure.Framework\PuntosColombia.MissingNumbers.Infrastructure.Framework.csproj" />
   </ItemGroup>
 </Project>

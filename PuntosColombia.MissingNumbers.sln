@@ -7,27 +7,23 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4. Infrastructure", "4. Inf
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4.1. Common", "4.1. Common", "{E8EC922F-3A50-4986-8A40-BAC2544A34DC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PuntosColombia.MissingNumbers.Infrastructure.Framework", "PuntosColombia.MissingNumbers\PuntosColombia.MissingNumbers.Infrastructure.Framework\PuntosColombia.MissingNumbers.Infrastructure.Framework.csproj", "{2949F04B-FCC0-40DC-9D63-1100AD760088}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PuntosColombia.MissingNumbers.Infrastructure.Framework", "PuntosColombia.MissingNumbers\PuntosColombia.MissingNumbers.Infrastructure.Framework\PuntosColombia.MissingNumbers.Infrastructure.Framework.csproj", "{2949F04B-FCC0-40DC-9D63-1100AD760088}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PuntosColombia.MissingNumbers.Infrastructure.Data", "PuntosColombia.MissingNumbers\PuntosColombia.MissingNumbers.Infrastructure.Data\PuntosColombia.MissingNumbers.Infrastructure.Data.csproj", "{77F1F0D8-96F0-4111-BA20-8A587A361B5F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PuntosColombia.MissingNumbers.Infrastructure.Data", "PuntosColombia.MissingNumbers\PuntosColombia.MissingNumbers.Infrastructure.Data\PuntosColombia.MissingNumbers.Infrastructure.Data.csproj", "{77F1F0D8-96F0-4111-BA20-8A587A361B5F}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3. Domain", "3. Domain", "{79023126-D157-4D65-8DAB-C23B9E55D674}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PuntosColombia.MissingNumbers.Domain.Entities", "PuntosColombia.MissingNumbers\PuntosColombia.MissingNumbers.Domain.Entities\PuntosColombia.MissingNumbers.Domain.Entities.csproj", "{9B1E100D-A97C-4B61-8C32-8C6FC05B8A47}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PuntosColombia.MissingNumbers.Domain.Entities", "PuntosColombia.MissingNumbers\PuntosColombia.MissingNumbers.Domain.Entities\PuntosColombia.MissingNumbers.Domain.Entities.csproj", "{9B1E100D-A97C-4B61-8C32-8C6FC05B8A47}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PuntosColombia.MissingNumbers.Domain", "PuntosColombia.MissingNumbers\PuntosColombia.MissingNumbers.Domain\PuntosColombia.MissingNumbers.Domain.csproj", "{C2723E22-5676-406D-B869-05D56607B4D0}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PuntosColombia.MissingNumbers.Domain.Test", "PuntosColombia.MissingNumbers\PuntosColombia.MissingNumbers.Domain.Test\PuntosColombia.MissingNumbers.Domain.Test.csproj", "{FA7541D8-148B-4CCD-A0FD-73597D6702EF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PuntosColombia.MissingNumbers.Domain", "PuntosColombia.MissingNumbers\PuntosColombia.MissingNumbers.Domain\PuntosColombia.MissingNumbers.Domain.csproj", "{C2723E22-5676-406D-B869-05D56607B4D0}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2. Application", "2. Application", "{38B2D08F-3243-4C32-8324-3C0C06220C30}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PuntosColombia.MissingNumbers.Application", "PuntosColombia.MissingNumbers\PuntosColombia.MissingNumbers.Application\PuntosColombia.MissingNumbers.Application.csproj", "{07AC98E8-24DF-45AE-BFD7-2507F668BF25}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PuntosColombia.MissingNumbers.Application", "PuntosColombia.MissingNumbers\PuntosColombia.MissingNumbers.Application\PuntosColombia.MissingNumbers.Application.csproj", "{07AC98E8-24DF-45AE-BFD7-2507F668BF25}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1. Presentation", "1. Presentation", "{3662D0A2-D345-4A37-928C-0B829006A9A4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PuntosColombia.MissingNumbers.API", "PuntosColombia.MissingNumbers\PuntosColombia.MissingNumbers.API\PuntosColombia.MissingNumbers.API.csproj", "{0FA97BF6-FED4-4488-8AA8-B2C03EC25FAC}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PuntosColombia.MissingNumbers", "PuntosColombia.MissingNumbers\PuntosColombia.MissingNumbers\PuntosColombia.MissingNumbers.csproj", "{CA75B958-A338-4ABA-A9C6-F2D9D3EA662B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PuntosColombia.MissingNumbers", "PuntosColombia.MissingNumbers\PuntosColombia.MissingNumbers\PuntosColombia.MissingNumbers.csproj", "{CA75B958-A338-4ABA-A9C6-F2D9D3EA662B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,18 +47,10 @@ Global
 		{C2723E22-5676-406D-B869-05D56607B4D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C2723E22-5676-406D-B869-05D56607B4D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C2723E22-5676-406D-B869-05D56607B4D0}.Release|Any CPU.Build.0 = Release|Any CPU
-		{FA7541D8-148B-4CCD-A0FD-73597D6702EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{FA7541D8-148B-4CCD-A0FD-73597D6702EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{FA7541D8-148B-4CCD-A0FD-73597D6702EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{FA7541D8-148B-4CCD-A0FD-73597D6702EF}.Release|Any CPU.Build.0 = Release|Any CPU
 		{07AC98E8-24DF-45AE-BFD7-2507F668BF25}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{07AC98E8-24DF-45AE-BFD7-2507F668BF25}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{07AC98E8-24DF-45AE-BFD7-2507F668BF25}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{07AC98E8-24DF-45AE-BFD7-2507F668BF25}.Release|Any CPU.Build.0 = Release|Any CPU
-		{0FA97BF6-FED4-4488-8AA8-B2C03EC25FAC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0FA97BF6-FED4-4488-8AA8-B2C03EC25FAC}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0FA97BF6-FED4-4488-8AA8-B2C03EC25FAC}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0FA97BF6-FED4-4488-8AA8-B2C03EC25FAC}.Release|Any CPU.Build.0 = Release|Any CPU
 		{CA75B958-A338-4ABA-A9C6-F2D9D3EA662B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{CA75B958-A338-4ABA-A9C6-F2D9D3EA662B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CA75B958-A338-4ABA-A9C6-F2D9D3EA662B}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -77,9 +65,7 @@ Global
 		{77F1F0D8-96F0-4111-BA20-8A587A361B5F} = {E8EC922F-3A50-4986-8A40-BAC2544A34DC}
 		{9B1E100D-A97C-4B61-8C32-8C6FC05B8A47} = {79023126-D157-4D65-8DAB-C23B9E55D674}
 		{C2723E22-5676-406D-B869-05D56607B4D0} = {79023126-D157-4D65-8DAB-C23B9E55D674}
-		{FA7541D8-148B-4CCD-A0FD-73597D6702EF} = {79023126-D157-4D65-8DAB-C23B9E55D674}
 		{07AC98E8-24DF-45AE-BFD7-2507F668BF25} = {38B2D08F-3243-4C32-8324-3C0C06220C30}
-		{0FA97BF6-FED4-4488-8AA8-B2C03EC25FAC} = {3662D0A2-D345-4A37-928C-0B829006A9A4}
 		{CA75B958-A338-4ABA-A9C6-F2D9D3EA662B} = {3662D0A2-D345-4A37-928C-0B829006A9A4}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution

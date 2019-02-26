@@ -3,9 +3,9 @@
   <PropertyGroup>
     <TargetFramework>netcoreapp2.0</TargetFramework>
   </PropertyGroup>
-
   <ItemGroup>
-    <Folder Include="Services\" />
+    <ProjectReference Include="..\PuntosColombia.MissingNumbers.Domain.Entities\PuntosColombia.MissingNumbers.Domain.Entities.csproj" />
+    <ProjectReference Include="..\PuntosColombia.MissingNumbers.Infrastructure.Framework\PuntosColombia.MissingNumbers.Infrastructure.Framework.csproj" />
   </ItemGroup>
 
 </Project>
